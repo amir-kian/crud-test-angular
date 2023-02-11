@@ -6,7 +6,12 @@ import { CustomerListComponent } from './Components/Customer/customer-list/custo
 import { CustomerRegisterComponent } from './Components/Customer/customer-register/customer-register.component';
 import { CustomerUpdateComponent } from './Components/Customer/customer-update/customer-update.component';
 import { CustomerDeleteComponent } from './Components/Customer/customer-delete/customer-delete.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoute:Routes=[
+  {path:'' ,component:CustomerListComponent},
+  {path:'Csutomers' ,component:CustomerListComponent},
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +21,8 @@ import { CustomerDeleteComponent } from './Components/Customer/customer-delete/c
     CustomerDeleteComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]

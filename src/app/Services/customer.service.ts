@@ -15,7 +15,11 @@ export class CustomerService {
 
   ];
   constructor() { 
-    localStorage.setItem("names", JSON.stringify(this.Customers));
+    localStorage.setItem("Customers", JSON.stringify(this.Customers));
+
+  }
+  GetCustomers(): any {
+return  JSON.parse(localStorage.getItem('Customers')|| '{}');
 
   }
 }
