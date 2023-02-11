@@ -1,4 +1,4 @@
-<p>customer-list works!</p>
+<a href="/RegisterCustomer">new customer</a>
 <table>
     <thead>
         <th>Firstname</th>
@@ -7,6 +7,7 @@
         <th>PhoneNumber</th>
         <th>Email</th>
         <th>BankAccountNumber</th>
+        <th>Delete</th>
     </thead>
     <tbody>
         <tr *ngFor="let item of Customers; let i=index" >
@@ -16,6 +17,9 @@
             <td>{{item.Firstname}}</td>
             <td>{{item.PhoneNumber}}</td>
             <td>{{item.BankAccountNumber}}</td>
+            <a class="btn btn-danger" [routerLink]="[ '/DeleteCustomer',item.Id]">delete</a>
+            <a class="btn btn-danger" [routerLink]="[ '/UpdateCustomer',item.Id]">UpdateCustomer</a>
+
         </tr>
     </tbody>
 </table>

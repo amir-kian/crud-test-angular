@@ -7,10 +7,14 @@ import { CustomerRegisterComponent } from './Components/Customer/customer-regist
 import { CustomerUpdateComponent } from './Components/Customer/customer-update/customer-update.component';
 import { CustomerDeleteComponent } from './Components/Customer/customer-delete/customer-delete.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 const appRoute:Routes=[
   {path:'' ,component:CustomerListComponent},
   {path:'Csutomers' ,component:CustomerListComponent},
+  {path:'RegisterCustomer' ,component:CustomerRegisterComponent},
+  {path:'DeleteCustomer/:id' ,component:CustomerDeleteComponent},
+  {path:'UpdateCustomer/:id' ,component:CustomerUpdateComponent},
 ]
 @NgModule({
   declarations: [
@@ -18,11 +22,14 @@ const appRoute:Routes=[
     CustomerListComponent,
     CustomerRegisterComponent,
     CustomerUpdateComponent,
-    CustomerDeleteComponent
+    CustomerDeleteComponent,
+    
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoute)
+    RouterModule.forRoot(appRoute),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
